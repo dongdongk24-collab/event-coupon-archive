@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sample-coffee-001",
+    "title": "샘플: 카카오톡 채널 추가 커피쿠폰 추첨 이벤트",
+    "organizer": "샘플 브랜드",
+    "category": "카카오톡 이벤트",
+    "reward": "커피쿠폰",
+    "summary": "카카오톡 채널을 추가하고 이벤트 게시물에 참여하면 추첨을 통해 커피쿠폰을 제공하는 형식의 샘플 항목입니다.",
+    "method": "카카오톡 채널 추가 후 이벤트 폼 제출",
+    "caution": "실제 이벤트가 아니라 화면 확인용 샘플입니다.",
+    "startDate": "2026-06-04",
+    "endDate": "2026-06-30",
+    "announcementDate": "2026-07-05",
+    "url": "https://github.com/dongdongk24-collab/event-coupon-archive",
+    "sourceUrl": "https://github.com/dongdongk24-collab/event-coupon-archive",
+    "tags": ["카카오톡", "커피쿠폰", "추첨", "기프티콘"]
+  },
+  {
+    "id": "sample-share-001",
+    "title": "샘플: SNS 공유 이벤트 경품 추첨",
+    "organizer": "샘플 기관",
+    "category": "공유 이벤트",
+    "reward": "기프티콘",
+    "summary": "공식 이벤트 게시물을 공유하고 인증 댓글을 남기면 기프티콘을 추첨 제공하는 형식의 샘플 항목입니다.",
+    "method": "게시물 공유 후 인증 댓글 작성",
+    "caution": "실제 이벤트가 아니라 화면 확인용 샘플입니다.",
+    "startDate": "2026-06-04",
+    "endDate": "2026-06-12",
+    "announcementDate": "2026-06-18",
+    "url": "https://github.com/dongdongk24-collab/event-coupon-archive",
+    "sourceUrl": "https://github.com/dongdongk24-collab/event-coupon-archive",
+    "tags": ["공유", "추첨", "기프티콘", "SNS"]
+  }
+]
