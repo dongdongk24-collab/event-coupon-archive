@@ -3,7 +3,7 @@ today.setHours(0, 0, 0, 0);
 
 const normalize = (value) => value.toString().trim().toLowerCase().replace(/\s+/g, " ");
 const daysUntil = (dateText) => {
-  if (!dateText) return Number.POSITIVE_INFINITY;
+  if (!dateText || dateText === "확인 필요") return Number.POSITIVE_INFINITY;
   const date = new Date(`${dateText}T00:00:00`);
   return Math.ceil((date - today) / 86400000);
 };
@@ -43,8 +43,7 @@ function eventTemplate(event) {
         <span>주의: ${event.caution}</span>
       </div>
       <div class="event-actions">
-        <a class="primary" href="${event.url}">이벤트 보기</a>
-        <a href="${event.sourceUrl}">출처 확인</a>
+        <a class="primary" href="${event.url}" target="_blank" rel="noopener noreferrer">이벤트 보기</a>
       </div>
     </article>
   `;
