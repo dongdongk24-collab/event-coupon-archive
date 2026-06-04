@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이벤트 쿠폰 아카이브</title>
+  <link rel="stylesheet" href="assets/style.css?v=20260604-1">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Event Coupon Archive</p>
+      <h1>이벤트 쿠폰 아카이브</h1>
+      <p class="lead">카카오톡 이벤트, 경품 이벤트, 공유 이벤트, 커피쿠폰·기프티콘 추첨 정보를 모아 보는 페이지입니다.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="filter-title">
+      <h2 id="filter-title">이벤트 찾기</h2>
+      <div class="control-grid">
+        <label class="field">
+          <span>검색어</span>
+          <input type="search" placeholder="예: 커피쿠폰, 카카오톡, 공유, 스타벅스" data-search>
+        </label>
+        <label class="field">
+          <span>분류</span>
+          <select data-category>
+            <option value="all">전체</option>
+            <option value="카카오톡 이벤트">카카오톡 이벤트</option>
+            <option value="경품 이벤트">경품 이벤트</option>
+            <option value="공유 이벤트">공유 이벤트</option>
+            <option value="커피쿠폰">커피쿠폰</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>상태</span>
+          <select data-status>
+            <option value="open">진행 중</option>
+            <option value="closing">마감 임박</option>
+            <option value="all">전체</option>
+            <option value="closed">마감</option>
+          </select>
+        </label>
+      </div>
+      <p class="helper" data-result-count>이벤트 데이터를 불러오는 중입니다.</p>
+    </section>
+
+    <section class="quick-tabs" aria-label="빠른 필터">
+      <button type="button" data-quick="커피쿠폰">커피쿠폰</button>
+      <button type="button" data-quick="카카오톡">카카오톡</button>
+      <button type="button" data-quick="공유">공유</button>
+      <button type="button" data-quick="추첨">추첨</button>
+      <button type="button" data-quick="선착순">선착순</button>
+    </section>
+
+    <section class="event-list" aria-label="이벤트 목록" data-event-list></section>
+  </main>
+
+  <script src="assets/app.js?v=20260604-1"></script>
+</body>
+</html>
