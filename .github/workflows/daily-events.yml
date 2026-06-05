@@ -1,0 +1,46 @@
+name: Daily event coupon archive update
+
+on:
+  schedule:
+    # 08:00 Asia/Seoul = 23:00 UTC on the previous day
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Target date in YYYY-MM-DD, defaults to yesterday KST"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  update-events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update event data
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1' }}
+          TARGET_DATE: ${{ inputs.target_date }}
+        run: python scripts/update_events.py
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No event updates."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events.json
+          git commit -m "Update event coupon archive"
+          git push
